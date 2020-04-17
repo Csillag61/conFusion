@@ -216,7 +216,7 @@
                     </div>
                 </div>
             </div>    
-        </div>
+        
         <div class ="row row-content align-items-center">
             <div class = "col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -267,7 +267,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
     <footer class ="footer">
         <div class="container">
             <div class ="row ">             
@@ -330,15 +330,24 @@
                 }
             });
             // ABSTRACT FUNCTION FOR HANDLE MODAL  
-            const handleModal = (triggerEl, modalEl) => {
-                $(triggerEl).click(() => {
-                $(modalEl).modal('toggle')
-                })
-            }
-            // LOGIN
-            handleModal('#login', '#loginModal')
-            // RESERVE TABLE
-            handleModal('#reserveButton', '#reserveModal')
+            // const handleModal = (triggerEl, modalEl) => {
+            //     $(triggerEl).click(() => {
+            //     $(modalEl).modal('toggle')
+            //     })
+            // }
+            // // LOGIN
+            // handleModal('#login', '#loginModal')
+            // // RESERVE TABLE
+            // handleModal('#reserveButton', '#reserveModal')
+            // Reserve Modal
+            $("#reserveButton").click(function() {
+                $('#reserveModal').modal('toggle');
+            });
+
+            // Login Modal
+            $("#login").click(function() {
+                $('#loginModal').modal('toggle');
+            });
             });    
                 
     </script>
