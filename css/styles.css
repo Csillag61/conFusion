@@ -63,3 +63,9 @@ body {
 
 .modal-title {
   color: floralwhite; }
+
+label {
+  font-weight: bold; }
+
+input {
+  font-weight: bold; }

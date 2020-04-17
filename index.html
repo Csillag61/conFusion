@@ -30,7 +30,8 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class ="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    
+                    <a id="login" class="pointer">
                         <span class="fa fa-sign-in"></span>Login</a>
                 </span>
             </div>
@@ -144,12 +145,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="form-group"> -->
-        <!-- <div class="col-sm-10 col-sm-push-1 alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <p><strong>Warning:</strong> Please <a href="tel:85212345678" class="alert-link">call</a> us to reserve for more than six guests</p>
-        </div>
-    </div> -->
+   
     <header class="jumbotron">
         <div class="container">
             <div class ="row row-header">
@@ -161,7 +157,11 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                   <a  data-toggle="modal" data-target="#reserveModal" role ="button" class="btn btn-block btn-warning">Reserve Table</button></a>
+                    <!----data-toggle-modal-->
+                    <a class='btn btn-warning  col-sm-4 offset-sm-1 offset-md-2 col-md-5 btn-sm btn-block sizer col-12 d-sm-flex flex-sm-wrap justify-content-center'
+                    id='reserveButton' role='button'>
+                    <span>Reserve Table</span></a>  
+                  
                 </div>
             </div>
         </div>
@@ -329,7 +329,17 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
-        });
+            // ABSTRACT FUNCTION FOR HANDLE MODAL  
+            const handleModal = (triggerEl, modalEl) => {
+                $(triggerEl).click(() => {
+                $(modalEl).modal('toggle')
+                })
+            }
+            // LOGIN
+            handleModal('#login', '#loginModal')
+            // RESERVE TABLE
+            handleModal('#reserveButton', '#reserveModal')
+            });    
                 
     </script>
 </body>
